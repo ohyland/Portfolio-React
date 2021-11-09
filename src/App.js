@@ -1,11 +1,5 @@
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-          Learn React
-      </header>
-    </div>
-  );
+  return <div className="App">Learn React</div>;
 }
 
 export default App;
