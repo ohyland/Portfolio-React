@@ -1,12 +1,13 @@
 import photo from '../images/olivia-hyland.jpg';
+import { Typography, CardMedia } from '@mui/material';
 
 const HomeSection = () => {
     return (
         <div className="homeSection">
-            <h1>Olivia Hyland</h1>
-            <p>Front end Web Developer</p>
-            <img src={photo} alt={'Olivia Hyland'} />
-            <h2>Skills</h2>
+            <Typography component="h1">Olivia Hyland</Typography>
+            <Typography component="h2">Front end Web Developer</Typography>
+            <CardMedia src={photo} alt={'Olivia Hyland'} />
+            <Typography component="h2">Skills</Typography>
             <ul>
                 <li>React</li>
                 <li>Javascript</li>
