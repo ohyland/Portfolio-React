@@ -1,7 +1,8 @@
-import photo from '../images/olivia-hyland.jpg'
-const Home = () => {
+import photo from '../images/olivia-hyland.jpg';
+
+const HomeSection = () => {
     return (
-        <div className="Home">
+        <div className="homeSection">
             <h1>Olivia Hyland</h1>
             <p>Front end Web Developer</p>
             <img src={photo} alt={'Olivia Hyland'} />
@@ -13,7 +14,7 @@ const Home = () => {
                 <li>Git</li>
             </ul>
         </div>
-    )
-}
+    );
+};
 
-export default Home
+export default HomeSection;
