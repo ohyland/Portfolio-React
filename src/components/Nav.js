@@ -1,17 +1,6 @@
 import { Link } from 'react-router-dom';
+import { AppBar, Toolbar, Typography } from '@mui/material';
 import {
-    AppBar,
-    Button,
-    Drawer,
-    Toolbar,
-    IconButton,
-    List,
-    ListItem,
-    ListItemIcon,
-    ListItemText,
-} from '@mui/material';
-import {
-    Menu as MenuIcon,
     Person as PersonIcon,
     Apps as AppsIcon,
     MailOutlineOutlined as MailOutlineOutlinedIcon,
@@ -20,11 +9,17 @@ import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles({
     appBar: {
-        display: 'flex',
-        backgroundColor: 'grey',
+        '& .MuiToolbar-root': {
+            backgroundColor: '#242424',
+        },
         '& a': {
             color: 'white',
             textDecoration: 'none',
+        },
+    },
+    drawer: {
+        '& .MuiPaper-root': {
+            backgroundColor: '#3e3e3ebd',
         },
     },
 });
@@ -34,51 +29,29 @@ const Nav = () => {
     return (
         <AppBar className={classes.appBar}>
             <Toolbar>
-                <IconButton
-                    size="small"
-                    edge="center"
-                    color="inherit"
-                    aria-label="Menu"
-                >
-                    <MenuIcon />
-                </IconButton>
-                <Drawer open anchor="right">
-                    <List>
-                        {[
-                            {
-                                text: 'Home',
-                                url: '/',
-                                icon: <PersonIcon />,
-                            },
-                            {
-                                text: 'Portfolio',
-                                url: '/portfolio',
-                                icon: <AppsIcon />,
-                            },
-                            {
-                                text: 'Contact',
-                                url: '/contact',
-                                icon: <MailOutlineOutlinedIcon />,
-                            },
-                        ].map((menuItem, index) => (
-                            <Link to={menuItem.url} key={index}>
-                                <ListItem button>
-                                    <ListItemIcon>{menuItem.icon}</ListItemIcon>
-                                    <ListItemText>{menuItem.text}</ListItemText>
-                                </ListItem>
-                            </Link>
-                        ))}
-                    </List>
-                    {/* <Button>
-                        
-                    </Button>
-                    <Button>
-                        <Link to="/portfolio">Portfolio</Link>
-                    </Button>
-                    <Button>
-                        <Link to="/contact">Contact</Link>
-                    </Button> */}
-                </Drawer>
+                {/* <div> */}
+                {[
+                    {
+                        text: 'About',
+                        url: '/',
+                        icon: <PersonIcon />,
+                    },
+                    {
+                        text: 'Portfolio',
+                        url: '/portfolio',
+                        icon: <AppsIcon />,
+                    },
+                    {
+                        text: 'Contact',
+                        url: '/contact',
+                        icon: <MailOutlineOutlinedIcon />,
+                    },
+                ].map((menuItem, index) => (
+                    <Link to={menuItem.url} key={index}>
+                        <Typography>{menuItem.text}</Typography>
+                    </Link>
+                ))}
+                {/* </div> */}
             </Toolbar>
         </AppBar>
     );
