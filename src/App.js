@@ -7,7 +7,8 @@ import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles({
     app: {
-        margin: '90px 30px',
+        margin: '150px 20vh',
+        textTransform: 'uppercase',
     },
 });
 

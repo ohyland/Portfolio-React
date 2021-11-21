@@ -10,16 +10,16 @@ import { makeStyles } from '@mui/styles';
 const useStyles = makeStyles({
     appBar: {
         '& .MuiToolbar-root': {
-            backgroundColor: '#242424',
+            display: 'flex',
+            justifyContent: 'flex-end',
+            '& .MuiTypography-root': {
+                fontWeight: 'bold',
+                margin: '0 10px',
+            },
         },
         '& a': {
             color: 'white',
             textDecoration: 'none',
-        },
-    },
-    drawer: {
-        '& .MuiPaper-root': {
-            backgroundColor: '#3e3e3ebd',
         },
     },
 });
@@ -29,7 +29,6 @@ const Nav = () => {
     return (
         <AppBar className={classes.appBar}>
             <Toolbar>
-                {/* <div> */}
                 {[
                     {
                         text: 'About',
@@ -51,7 +50,6 @@ const Nav = () => {
                         <Typography>{menuItem.text}</Typography>
                     </Link>
                 ))}
-                {/* </div> */}
             </Toolbar>
         </AppBar>
     );
