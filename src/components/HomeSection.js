@@ -6,8 +6,11 @@ import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles({
     homeSection: {
+        '& h3': {
+            textTransform: 'uppercase',
+        },
         display: 'flex',
-        justifyContent: 'space-evenly',
+        justifyContent: 'space-between',
         '& span': {
             fontWeight: 'bold',
         },
@@ -22,10 +25,11 @@ const useStyles = makeStyles({
         },
         '& img': {
             borderRadius: '50%',
-            width: '400px',
+            width: '100%',
             boxShadow: '0 0 8px 8px white inset',
         },
         '& a': {
+            textTransform: 'uppercase',
             display: 'flex',
             textDecoration: 'none',
             fontWeight: 'bolder',
@@ -45,11 +49,9 @@ const HomeSection = () => {
                 <Typography variant="h5">
                     Frontend <span>Software Developer</span>
                 </Typography>
-                {/* <Button variant="outlined" color="secondary"> */}
                 <Link to="/portfolio">
                     See My Portfolio <ChevronRightIcon />
                 </Link>
-                {/* </Button> */}
             </div>
             <div>
                 <img

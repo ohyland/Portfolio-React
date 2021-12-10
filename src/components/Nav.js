@@ -10,6 +10,7 @@ import { makeStyles } from '@mui/styles';
 const useStyles = makeStyles({
     appBar: {
         '& .MuiToolbar-root': {
+            textTransform: 'uppercase',
             display: 'flex',
             justifyContent: 'flex-end',
             '& .MuiTypography-root': {

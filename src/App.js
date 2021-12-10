@@ -8,8 +8,14 @@ import { makeStyles } from '@mui/styles';
 const useStyles = makeStyles({
     app: {
         color: 'white',
-        margin: '20vh 150px 0px 150px',
-        textTransform: 'uppercase',
+        margin: '20vh 15vw 0px 15vw',
+        '& .MuiTypography-h3': {
+            marginBottom: '40px',
+        },
+        '& .MuiTypography-h5': {
+            marginBottom: '25px',
+            fontWeight: 'bold',
+        },
     },
 });
 
