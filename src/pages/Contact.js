@@ -1,7 +1,23 @@
 import React, { useState } from 'react';
 import { Button, TextField, Typography } from '@mui/material';
+import { makeStyles } from '@mui/styles';
+
+const useStyles = makeStyles({
+    form: {
+        width: '50%',
+        '& input': {
+            color: 'white',
+            fontStyle: 'italic',
+        },
+        '& .MuiOutlinedInput-root': {
+            marginBottom: '10px',
+            backgroundColor: '#1a1a1a',
+        },
+    },
+});
 
 const Contact = () => {
+    const classes = useStyles();
     const [values, setValue] = useState({
         name: '',
         email: '',
@@ -16,8 +32,8 @@ const Contact = () => {
 
     return (
         <div>
-            <Typography variant="h3">Contact Me</Typography>
-            <form onSubmit={onSubmitForm}>
+            <Typography variant="h4">Contact Me</Typography>
+            <form className={classes.form} onSubmit={onSubmitForm}>
                 <div>
                     <TextField
                         fullWidth
@@ -54,9 +70,9 @@ const Contact = () => {
                         Submit
                     </Button>
                 </div>
-                <p>name: {values.name}</p>
+                {/* <p>name: {values.name}</p>
                 <p>email: {values.email}</p>
-                <p>message: {values.message}</p>
+                <p>message: {values.message}</p> */}
             </form>
         </div>
     );

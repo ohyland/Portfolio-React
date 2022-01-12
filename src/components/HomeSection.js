@@ -25,7 +25,7 @@ const useStyles = makeStyles({
         },
         '& img': {
             borderRadius: '50%',
-            width: '100%',
+            width: '90%',
             boxShadow: '0 0 8px 8px white inset',
         },
         '& a': {
