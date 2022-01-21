@@ -9,14 +9,16 @@ const useStyles = makeStyles({
         '& h3': {
             textTransform: 'uppercase',
         },
-        display: 'flex',
-        justifyContent: 'space-between',
         '& span': {
             fontWeight: 'bold',
         },
         '& .homePageText': {
             '& .MuiTypography-root': {
                 marginBottom: '10px',
+            },
+            '& .MuiTypography-body1': {
+                display: 'flex',
+                fontWeight: '800',
             },
             display: 'flex',
             flexDirection: 'column',
@@ -25,7 +27,7 @@ const useStyles = makeStyles({
         },
         '& img': {
             borderRadius: '50%',
-            width: '90%',
+            width: '50%',
             boxShadow: '0 0 8px 8px white inset',
         },
         '& a': {
@@ -33,7 +35,6 @@ const useStyles = makeStyles({
             display: 'flex',
             textDecoration: 'none',
             fontWeight: 'bolder',
-            color: '#C133FF',
         },
     },
 });
@@ -43,22 +44,25 @@ const HomeSection = () => {
     return (
         <div className={classes.homeSection}>
             <div className="homePageText">
-                <Typography variant="h3">
-                    <span>Olivia</span> Hyland
-                </Typography>
-                <Typography variant="h5">
-                    Frontend <span>Software Developer</span>
-                </Typography>
-                <Link to="/portfolio">
-                    See My Portfolio <ChevronRightIcon />
-                </Link>
-            </div>
-            <div>
                 <img
                     className={classes.image}
                     src={photo}
                     alt={'Olivia Hyland'}
                 />
+                <Typography variant="h3">
+                    <span>Olivia</span> Hyland
+                </Typography>
+
+                <Typography variant="h5">
+                    Frontend <span>Software Developer</span>
+                </Typography>
+
+                <Link to="/portfolio" color="secondary">
+                    <Typography color="secondary" variant="body1">
+                        See My Portfolio
+                        <ChevronRightIcon />
+                    </Typography>
+                </Link>
             </div>
         </div>
     );
