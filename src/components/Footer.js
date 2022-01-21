@@ -24,7 +24,7 @@ const Footer = () => {
             >
                 <Toolbar variant="dense">
                     <Typography variant="caption" className={classes.copyright}>
-                        Olivia Hyland {new Date().getFullYear()}
+                        © - Olivia Hyland {new Date().getFullYear()}
                     </Typography>
 
                     <Box sx={{ flexGrow: 1 }} />
