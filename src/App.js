@@ -15,6 +15,10 @@ const useStyles = makeStyles({
         '& .MuiAppBar-root': {
             padding: '0 2vw 0 2vw',
         },
+        '& .MuiTypography-body2': {
+            marginBottom: '10px',
+            fontWeight: 'bold',
+        },
         '& .MuiTypography-h3': {
             marginBottom: '40px',
         },
