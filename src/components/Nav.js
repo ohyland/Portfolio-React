@@ -29,6 +29,10 @@ const useStyles = makeStyles({
         '& .MuiTypography-body1': {
             borderBottom: '3px solid transparent',
             color: 'white',
+            '&:hover': {
+                borderBottom: '3px solid #383838',
+                transitionDuration: '0.5s',
+            },
         },
         '& .MuiTypography-root': {
             fontWeight: 'bold',
@@ -36,7 +40,8 @@ const useStyles = makeStyles({
             color: 'white',
         },
         '& .MuiListItem-root': {
-            color: 'white',
+            fontWeight: 'bolder',
+            cursor: 'pointer',
         },
         '& .MuiToolbar-root': {
             textTransform: 'uppercase',
