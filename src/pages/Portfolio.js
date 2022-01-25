@@ -23,9 +23,6 @@ const useStyles = makeStyles({
         '& .MuiGrid-root': {
             justifyContent: 'space-between',
         },
-        // '& .MuiPaper-root': {
-        //     maxWidth: '85%',
-        // },
         '& .MuiTypography-root': {
             color: 'white',
         },
@@ -45,14 +42,14 @@ const Portfolio = () => {
             <Typography variant="h4" component="h1">
                 Things I've built...
             </Typography>
-            <Grid container>
+            <Grid container spacing={2}>
                 <Grid item xs={12} sm={5} md={4} lg={3}>
-                    <Card variant="outlined" sx={{ maxWidth: 345 }}>
+                    <Card variant="outlined">
                         <CardMedia
                             component="img"
                             height="140"
                             image={todoListPhoto}
-                            alt="green iguana"
+                            alt=""
                         />
                         <CardContent>
                             <Typography

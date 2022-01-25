@@ -20,7 +20,7 @@ const useStyles = makeStyles({
             fontWeight: 'bold',
         },
         '& .MuiTypography-h3': {
-            marginBottom: '40px',
+            marginBottom: '10px',
         },
         '& .MuiTypography-h4': {
             marginBottom: '40px',

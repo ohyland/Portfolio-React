@@ -4,28 +4,26 @@ import { Typography } from '@mui/material';
 import { ChevronRight as ChevronRightIcon } from '@mui/icons-material';
 import { makeStyles } from '@mui/styles';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     homeSection: {
-        '& h3': {
+        display: 'flex',
+        flexDirection: 'column',
+
+        [theme.breakpoints.up('sm')]: {
+            display: 'flex',
+            alignItems: 'center',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+        },
+        '& .MuiTypography-h3': {
             textTransform: 'uppercase',
+            marginBottom: '10px',
         },
         '& span': {
             fontWeight: 'bold',
         },
-        '& .homePageText': {
-            '& .MuiTypography-root': {
-                marginBottom: '10px',
-            },
-            '& .MuiTypography-body1': {
-                display: 'flex',
-                fontWeight: '800',
-            },
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'flex-start',
-            justifyContent: 'center',
-        },
         '& img': {
+            maxWidth: '350px',
             borderRadius: '50%',
             width: '50%',
             boxShadow: '0 0 8px 8px white inset',
@@ -36,19 +34,21 @@ const useStyles = makeStyles({
             textDecoration: 'none',
             fontWeight: 'bolder',
         },
+        '& .MuiTypography-root': {
+            marginBottom: '10px',
+        },
+        '& .MuiTypography-body1': {
+            display: 'flex',
+            fontWeight: '800',
+        },
     },
-});
+}));
 
 const HomeSection = () => {
     const classes = useStyles();
     return (
         <div className={classes.homeSection}>
-            <div className="homePageText">
-                <img
-                    className={classes.image}
-                    src={photo}
-                    alt={'Olivia Hyland'}
-                />
+            <div>
                 <Typography variant="h3">
                     <span>Olivia</span> Hyland
                 </Typography>
@@ -64,6 +64,8 @@ const HomeSection = () => {
                     </Typography>
                 </Link>
             </div>
+
+            <img className={classes.image} src={photo} alt={'Olivia Hyland'} />
         </div>
     );
 };
