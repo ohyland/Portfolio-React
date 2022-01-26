@@ -23,8 +23,18 @@ const useStyles = makeStyles({
         '& .MuiGrid-root': {
             justifyContent: 'space-between',
         },
+        '& .MuiGrid-item': {
+            flexGrow: '0.5',
+            maxWidth: '100%',
+        },
         '& .MuiTypography-root': {
             color: 'white',
+        },
+        '& .MuiPaper-root': {
+            height: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
         },
         '& .icons': {
             display: 'flex',
@@ -42,7 +52,7 @@ const Portfolio = () => {
             <Typography variant="h4" component="h1">
                 Things I've built...
             </Typography>
-            <Grid container spacing={2}>
+            <Grid container spacing={2.5} direction="row" alignItems="stretch">
                 <Grid item xs={12} sm={5} md={4} lg={3}>
                     <Card variant="outlined">
                         <CardMedia
@@ -85,12 +95,12 @@ const Portfolio = () => {
                     </Card>
                 </Grid>
                 <Grid item xs={12} sm={5} md={4} lg={3}>
-                    <Card sx={{ maxWidth: 345 }}>
+                    <Card>
                         <CardMedia
                             component="img"
                             height="140"
                             image={weatherAppPhoto}
-                            alt="green iguana"
+                            alt=""
                         />
                         <CardContent>
                             <Typography
@@ -125,12 +135,12 @@ const Portfolio = () => {
                     </Card>
                 </Grid>
                 <Grid item xs={12} sm={5} md={4} lg={3}>
-                    <Card sx={{ maxWidth: 345 }}>
+                    <Card>
                         <CardMedia
                             component="img"
                             height="140"
                             image={twitterPhoto}
-                            alt="green iguana"
+                            alt=""
                         />
                         <CardContent>
                             <Typography
@@ -163,12 +173,12 @@ const Portfolio = () => {
                     </Card>
                 </Grid>
                 <Grid item xs={12} sm={5} md={4} lg={3}>
-                    <Card sx={{ maxWidth: 345 }}>
+                    <Card>
                         <CardMedia
                             component="img"
                             height="140"
                             image={gamesAppPhoto}
-                            alt="green iguana"
+                            alt=""
                         />
                         <CardContent>
                             <Typography
