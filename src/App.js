@@ -6,9 +6,12 @@ import Contact from './pages/Contact';
 import Portfolio from './pages/Portfolio';
 import { makeStyles } from '@mui/styles';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     routes: {
-        margin: '20vh 10vw 50px 10vw',
+        margin: '12vh 10vw 50px 10vw',
+        [theme.breakpoints.up('sm')]: {
+            margin: '18vh 10vw 50px 10vw',
+        },
     },
     app: {
         color: 'white',
@@ -30,7 +33,7 @@ const useStyles = makeStyles({
             fontWeight: 'bold',
         },
     },
-});
+}));
 
 function App() {
     const classes = useStyles();
