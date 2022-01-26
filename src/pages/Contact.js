@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 import axios from 'axios';
 import { makeStyles } from '@mui/styles';
 import {
@@ -25,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
         },
 
         '& .contactDetails': {
+            color: 'white',
             [theme.breakpoints.up('sm')]: {
                 width: '50%',
                 display: 'flex',
@@ -54,6 +56,9 @@ const useStyles = makeStyles((theme) => ({
 const Contact = () => {
     const formId = 'PFUsPpdF';
     const formSparkUrl = `https://submit-form.com/${formId}`;
+    const recaptchaKey = '6LcfBjkeAAAAALm1dSYqtvdhRqGliBLiXIhZWPrI';
+    const recaptchaRef = useRef();
+
     const classes = useStyles();
     const [formValues, setFormValues] = useState({
         name: '',
@@ -63,11 +68,16 @@ const Contact = () => {
     const [submitting, setSubmitting] = useState(false);
     const [message, setMessage] = useState();
     const [open, setOpen] = useState(false);
-
+    const [recapthaToken, setRecapthaToken] = useState('');
     const onSubmitForm = (event) => {
         event.preventDefault();
         const { name, email, message } = formValues;
-        setFormValues({ Name: name, Email: email, Message: message });
+        setFormValues({
+            Name: name,
+            Email: email,
+            Message: message,
+            'g-recaptcha-response': recapthaToken,
+        });
         setSubmitting(true);
         postSubmission();
         setSubmitting(false);
@@ -78,7 +88,7 @@ const Contact = () => {
         const payload = formValues;
         try {
             const result = await axios.post(formSparkUrl, payload);
-            console.log('result: ', result);
+            console.log(result);
             setOpen(true);
             setMessage('Thank you, Your message has been sent!');
         } catch (error) {
@@ -88,6 +98,10 @@ const Contact = () => {
 
     const handleClose = () => {
         setOpen(false);
+    };
+
+    const updateRecaptchaToken = (token) => {
+        setRecapthaToken(token);
     };
 
     return (
@@ -135,6 +149,12 @@ const Contact = () => {
                             }
                         ></TextField>
                     </div>
+                    <ReCAPTCHA
+                        ref={recaptchaRef}
+                        sitekey={recaptchaKey}
+                        onChange={updateRecaptchaToken}
+                    />
+
                     <div>
                         <Button
                             disabled={submitting}
@@ -166,13 +186,21 @@ const Contact = () => {
                 </form>
                 <div className="contactDetails">
                     <List>
-                        <ListItem>
+                        <ListItem
+                            component={Button}
+                            href="https://www.linkedin.com/in/olivia-hyland-79775317b/"
+                            target="_blank"
+                        >
                             <ListItemIcon>
                                 <LinkedInIcon />
                             </ListItemIcon>
                             <ListItemText>{'LinkedIn'}</ListItemText>
                         </ListItem>
-                        <ListItem>
+                        <ListItem
+                            component={Button}
+                            href="https://github.com/ohyland"
+                            target="_blank"
+                        >
                             <ListItemIcon>
                                 <GitHubIcon />
                             </ListItemIcon>
@@ -182,7 +210,9 @@ const Contact = () => {
                             <ListItemIcon>
                                 <EmailIcon />
                             </ListItemIcon>
-                            <ListItemText>{'Email'}</ListItemText>
+                            <ListItemText>
+                                {'1oliviahyland@gmail.com'}
+                            </ListItemText>
                         </ListItem>
                     </List>
                 </div>
