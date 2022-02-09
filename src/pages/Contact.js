@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
                 display: 'flex',
                 flexDirection: 'row',
                 justifyContent: 'space-around',
-                alignItems: 'center',
+                // alignItems: 'center',
             },
         },
     },
@@ -193,7 +193,6 @@ const Contact = () => {
                 <div className="contactDetails">
                     <List>
                         <ListItem
-                            component={Button}
                             href="https://www.linkedin.com/in/olivia-hyland-79775317b/"
                             target="_blank"
                         >
@@ -203,7 +202,6 @@ const Contact = () => {
                             <ListItemText>{'LinkedIn'}</ListItemText>
                         </ListItem>
                         <ListItem
-                            component={Button}
                             href="https://github.com/ohyland"
                             target="_blank"
                         >
