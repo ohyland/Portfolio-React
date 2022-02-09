@@ -54,21 +54,24 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Contact = () => {
+    const initialFormValue = {
+        name: '',
+        email: '',
+        message: '',
+    };
     const formId = 'PFUsPpdF';
     const formSparkUrl = `https://submit-form.com/${formId}`;
+
     const recaptchaKey = '6LcfBjkeAAAAALm1dSYqtvdhRqGliBLiXIhZWPrI';
     const recaptchaRef = useRef();
 
     const classes = useStyles();
-    const [formValues, setFormValues] = useState({
-        name: '',
-        email: '',
-        message: '',
-    });
+    const [formValues, setFormValues] = useState(initialFormValue);
     const [submitting, setSubmitting] = useState(false);
     const [message, setMessage] = useState();
     const [open, setOpen] = useState(false);
     const [recapthaToken, setRecapthaToken] = useState('');
+
     const onSubmitForm = (event) => {
         event.preventDefault();
         const { name, email, message } = formValues;
@@ -76,21 +79,24 @@ const Contact = () => {
             Name: name,
             Email: email,
             Message: message,
-            'g-recaptcha-response': recapthaToken,
         });
         setSubmitting(true);
         postSubmission();
         setSubmitting(false);
-        setFormValues({});
     };
 
     const postSubmission = async () => {
-        const payload = formValues;
+        const payload = {
+            ...formValues,
+            'g-recaptcha-response': recapthaToken,
+        };
         try {
             const result = await axios.post(formSparkUrl, payload);
             console.log(result);
             setOpen(true);
             setMessage('Thank you, Your message has been sent!');
+            setFormValues(initialFormValue);
+            recaptchaRef.current.reset();
         } catch (error) {
             setMessage('Sorry, there was a problem, please try again');
         }
