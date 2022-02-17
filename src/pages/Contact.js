@@ -209,14 +209,6 @@ const Contact = () => {
                             </ListItemIcon>
                             <ListItemText>{'Github'}</ListItemText>
                         </ListItem>
-                        <ListItem>
-                            <ListItemIcon>
-                                <EmailIcon />
-                            </ListItemIcon>
-                            <ListItemText>
-                                {'1oliviahyland@gmail.com'}
-                            </ListItemText>
-                        </ListItem>
                     </List>
                 </div>
             </div>

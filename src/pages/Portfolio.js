@@ -85,7 +85,7 @@ const Portfolio = () => {
                             </Tooltip>
                             <Tooltip title="View live">
                                 <IconButton
-                                    href="https://reacttodolist20.netlify.app/"
+                                    href="https://optimistic-colden-c96c18.netlify.app/"
                                     color="secondary"
                                 >
                                     <LaptopMacIcon />
@@ -110,7 +110,6 @@ const Portfolio = () => {
                             >
                                 Weather App
                             </Typography>
-
                             <Typography variant="body2" color="text.secondary">
                                 Weather app created using React and weather data
                                 fetched using Axios
@@ -127,7 +126,10 @@ const Portfolio = () => {
                                 </IconButton>
                             </Tooltip>
                             <Tooltip title="View live">
-                                <IconButton color="secondary">
+                                <IconButton
+                                    href="https://condescending-mcclintock-5fe196.netlify.app/</Tooltip>"
+                                    color="secondary"
+                                >
                                     <LaptopMacIcon />
                                 </IconButton>
                             </Tooltip>
@@ -164,11 +166,6 @@ const Portfolio = () => {
                                     <GitHubIcon />
                                 </IconButton>
                             </Tooltip>
-                            <Tooltip title="View live">
-                                <IconButton color="secondary">
-                                    <LaptopMacIcon />
-                                </IconButton>
-                            </Tooltip>
                         </CardActions>
                     </Card>
                 </Grid>
@@ -200,11 +197,6 @@ const Portfolio = () => {
                                     color="secondary"
                                 >
                                     <GitHubIcon />
-                                </IconButton>
-                            </Tooltip>
-                            <Tooltip title="View live">
-                                <IconButton color="secondary">
-                                    <LaptopMacIcon />
                                 </IconButton>
                             </Tooltip>
                         </CardActions>
