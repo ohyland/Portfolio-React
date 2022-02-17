@@ -14,7 +14,6 @@ import {
     ListItemText,
 } from '@mui/material';
 import {
-    Email as EmailIcon,
     GitHub as GitHubIcon,
     LinkedIn as LinkedInIcon,
 } from '@mui/icons-material';
